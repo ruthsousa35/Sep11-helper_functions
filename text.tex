@@ -1,0 +1,328 @@
+$
+Javascript Variables and Functions
+
+//let myVar = "win" Javascript
+
+% html
+<!- comments->
+_____________________________
+
+Variable - storage value - can be modified 
+
+\begin{definition}[name of the definition]
+    
+\end{definition}
+
+Naming variables 
+
+
+_____________________________
+ 
+Statement block { }
+code that you will execute
+
+______________________________
+
+var myVar = "Wandinha";
+
+// camelCase
+
+//snake_camelCase
+
+
+___________________________
+
+let MyVar ="John";
+console.log(MyVar); /// define first
+
+_____________________________________________________________________________________________
+
+var = its global,  case sensitive, not very good, scope=rule = when you need everywhere
+
+_____________________________________________________________________________________________
+
+
+Understanding Hoisting 
+
+( the order matters)
+
+console.log(myVar);
+//unddefined
+var myVar = "Wandinha";
+_____________________________________________________________________________________________
+
+
+let = can be change the value
+
+{ let myVar ="Wandinha";  }
+_____________________________________________________________________________________________
+const = don't change ( block-scoped - not allow reassignment, but array can be modified)
+
+{
+    const myVar ="John";
+    console.log(myVar);
+}
+
+console.log(myVar);
+
+_____________________________________________________________________________________________
+
+Type Errors
+
+typeof - operator   
+_____________________________________________________________________________________________
+
+Function - reusable block of code
+( don't use num or name with name)
+ Call and invoke
+
+function sayHello() {
+    console.log("Hello, world!");
+}
+
+sayHello();
+
+ function addTwo(num) {
+    num = 999; 
+    return num +2;
+
+ }
+
+ addTwo(3);
+ addTwo(num);
+ addTwo(num3);
+
+__________________________
+ command I - called AI
+
+_____________________________________________________________________________________________
+
+
+% Named Function Example
+
+\begin{verbatim}
+function multiply(a, b) {
+    return a + b;
+}
+
+let result = add(2, 3);
+console.log(result); // Output: 5
+\end{verbatim}
+_________________________
+
+Statement and expression
+A statement in JavaScript is a complete instruction that performs an action, such as declaring a variable or calling a function. For example:
+let x = 5;
+
+An expression is any valid unit of code that resolves to a value. For example:
+2 + 3
+x * 10
+
+In functions, you can have both statements and expressions. For example, the body of a function can contain statements (like variable declarations) and expressions (like calculations or return values).
+
+_____________________________________________
+
+% Anonymous Function Example
+
+\begin{verbatim}
+let greet = function(name) {
+    console.log("Hello, " + name + "!");
+};
+
+greet("Alice"); // Output: Hello, Alice!
+\end{verbatim}
+
+(callback = diferent ways )
+
+_____________________________________________
+
+% Immediately Invoked Function Expression (IIFE) Example
+
+\begin{verbatim}
+(function() {
+    console.log("This function runs immediately!");
+})();
+\end{verbatim}
+
+_____________________________________________
+
+
+% Arrow Function Example
+
+\begin{verbatim}
+const add = (a, b) => {
+    return a + b;
+};
+
+console.log(add(2, 3)); // Output: 5
+\end{verbatim}
+
+_____________________________________________
+
+function actually object
+
+this 
+
+is a keyword
+
+% Arrow functions do not have their own 'this'
+% Example:
+
+\begin{verbatim}
+const obj = {
+    value: 42,
+    regularFunc: function() {
+        console.log(this.value); // 'this' refers to obj
+    },
+    arrowFunc: () => {
+        console.log(this.value); // 'this' is not bound to obj
+    }
+};
+
+obj.regularFunc(); // Output: 42
+obj.arrowFunc();   // Output: undefined (or window/global value)
+\end{verbatim}
+
+% In arrow functions, 'this' is inherited from the surrounding scope.
+
+usually is a const
+
+_____________________________________________
+
+variable that i set to function:
+
+
+const subtract = (x,y) => x-y;
+
+const subtract = (x,y) =>{
+   return x-y;
+};
+
+
+
+
+
+const subtract = (x,y) => x-y;
+
+_____________________________________________
+
+
+function subtract(x,y) { x-y;
+
+    this 
+    return x-y;
+}
+
+_____________________________________________
+
+callback = Arrow
+
+
+object programming - arrow
+
+_____________________________________________
+
+
+% Object Example
+
+\begin{verbatim}
+const person = {
+    name: "Alice",
+    age: 30,
+    greet: function() {
+        console.log("Hello, my name is " + this.name);
+    }
+};
+
+console.log(person.name); // Output: Alice
+person.greet(); // Output: Hello, my name is Alice
+\end{verbatim}
+
+_____________________________________________
+
+MDM - Javascript
+documentation 
+
+closure
+_____________________________________________
+
+
+call Function
+Invoking Function 
+
+% Example of calling a function
+
+\begin{verbatim}
+function sayHello() {
+    console.log("Hello!");
+}
+
+// Call (invoke) the function
+sayHello(); // Output: Hello!
+\end{verbatim}
+
+
+_____________________________________________
+
+
+% Callback Function Example
+
+\begin{verbatim}
+function fetchData(callback) {
+    setTimeout(function() {
+        const data = "Sample data";
+        callback(data);
+    }, 1000);
+}
+
+function handleData(result) {
+    console.log("Received:", result);
+}
+
+fetchData(handleData); // Output after 1 second: Received: Sample data
+\end{verbatim}
+
+
+
+__________________________________________
+
+% Event Listener Example
+
+lovable.dev. clone website
+
+
+_____________
+
+
+\begin{verbatim}
+// HTML: <button id="myButton">Click me</button>
+
+document.getElementById("myButton").addEventListener("click", function() {
+    console.log("Button was clicked!");
+});
+\end{verbatim}
+
+__________________________________________
+% Example: Button that changes text when clicked
+
+\begin{verbatim}
+// HTML: <button id="changeBtn">Change Text</button>
+//       <p id="text">Original Text</p>
+
+document.getElementById("changeBtn").addEventListener("click", function() {
+    document.getElementById("text").textContent = "Text changed!";
+});
+\end{verbatim}
+__________________________________________
+
+% Example: Using addEventListener to handle a click event
+
+\begin{verbatim}
+// HTML: <button id="alertBtn">Show Alert</button>
+
+document.getElementById("alertBtn").addEventListener("click", function() {
+    alert("Button was clicked!");
+});
+\end{verbatim}
+
+__________________________________________
